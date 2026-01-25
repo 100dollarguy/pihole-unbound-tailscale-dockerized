@@ -27,6 +27,8 @@ My internet provider (Jio Fiber) uses CGNAT, so I don’t get a public IP addres
 
 # 🛠️ How I Built It
 
+If you are not using a Mac skip to [Section 2](#2-create-docker-compose-setup).
+
 ## 1. Setup Docker + Colima
 
 Install Colima and start it:
