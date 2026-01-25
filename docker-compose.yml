@@ -48,7 +48,7 @@ services:
       - tailscale
     network_mode: "service:tailscale"
     environment:
-      TZ: 'Asia/Kolkata'
+      TZ: 'Asia/Kolkata' # Set to your local Timezone for correct Dates in pihole
       FTLCONF_webserver_api_password: "admin123" # set to "" if you do not want a password
       DNSMASQ_LISTENING: all
       PIHOLE_DNS_: 172.22.0.10#5335
