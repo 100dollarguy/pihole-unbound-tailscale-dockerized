@@ -3,7 +3,7 @@
 services:
   unbound:
     image: tiredofit/unbound:latest
-    platform: linux/arm64
+    platform: linux/arm64 # platform for mac, see README for info
     container_name: unbound
     restart: unless-stopped
     ports:
@@ -21,7 +21,7 @@ services:
 
   tailscale:
     image: tailscale/tailscale:latest
-    platform: linux/arm64
+    platform: linux/arm64 # platform for mac, see README for info
     container_name: tailscale-pihole
     hostname: pihole-server
     environment:
@@ -41,7 +41,7 @@ services:
 
   pihole:
     image: pihole/pihole:latest
-    platform: linux/arm64
+    platform: linux/arm64 # platform for mac, see README for info
     container_name: pihole
     depends_on:
       - unbound
