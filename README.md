@@ -1,10 +1,12 @@
 ## Private DNS Ad-Blocking and Remote Access with Pi-hole + Unbound + Tailscale
 
+# 👋 Why I Built This
 
 I care about online privacy and wanted to block ads and trackers across all my devices, not just in browsers. Public DNS providers like Google or Cloudflare are fast, but often log user data. I wanted full control over DNS resolution and to keep it private.
 
 My internet provider (Jio Fiber) uses CGNAT, so I don’t get a public IP address. That makes remote access tricky. This project uses Tailscale to solve that problem while offering secure DNS resolution and ad-blocking.
 
+# 🔍 Problems Solved
 
 - Block ads and trackers across all devices
 - Encrypt and control DNS traffic (no third-party logging)
@@ -14,6 +16,7 @@ My internet provider (Jio Fiber) uses CGNAT, so I don’t get a public IP addres
 
 ![Architecture](/screenshots/Architecure-Pihole+Docker.png)
 
+# 🧰 Tools Used
 
 - macOS (host)
 - Colima to run Docker with Lima backend on macOS
@@ -22,6 +25,7 @@ My internet provider (Jio Fiber) uses CGNAT, so I don’t get a public IP addres
 - Unbound (recursive DNS resolver)
 - Tailscale (zero-config WireGuard-based VPN)
 
+# 🛠️ How I Built It
 
 ## 1. Setup Docker + Colima
 
@@ -81,6 +85,7 @@ Generated an auth key tagged with tag:pihole
 Used that auth key in Docker Compose for Tailscale container
 
 4. Set ACL Tag Permissions
+## 4. Set ACL Tag Permissions
 
 ```json
 "tagOwners": {
