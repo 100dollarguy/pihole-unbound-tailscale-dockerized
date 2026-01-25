@@ -26,7 +26,7 @@ services:
     hostname: pihole-server
     environment:
       - TS_AUTHKEY=${AUTHKEY}  # Replace with your key
-      - TS_EXTRA_ARGS=--accept-dns=false --advertise-tags=tag:dns
+      - TS_EXTRA_ARGS=--accept-dns=false --advertise-tags=tag:pihole
       - TS_STATE_DIR=/var/lib/tailscale
     volumes:
       - ./tailscale-data:/var/lib/tailscale
