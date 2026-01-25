@@ -159,7 +159,7 @@ Click on the switch named "Override DNS Servers".
 
 ## 7. Remote Access
 
-Tested DNS queries from remote Tailscale-connected devices:
+Test DNS queries from remote Tailscale connected devices:
 
 ```shell
 nslookup google.com 100.x.x.x
