@@ -1,12 +1,10 @@
 ## Private DNS Ad-Blocking and Remote Access with Pi-hole + Unbound + Tailscale
 
-👋 Why I Built This
 
 I care about online privacy and wanted to block ads and trackers across all my devices, not just in browsers. Public DNS providers like Google or Cloudflare are fast, but often log user data. I wanted full control over DNS resolution and to keep it private.
 
 My internet provider (Jio Fiber) uses CGNAT, so I don’t get a public IP address. That makes remote access tricky. This project uses Tailscale to solve that problem while offering secure DNS resolution and ad-blocking.
 
-🔍 Problems Solved
 
 - Block ads and trackers across all devices
 - Encrypt and control DNS traffic (no third-party logging)
@@ -16,7 +14,6 @@ My internet provider (Jio Fiber) uses CGNAT, so I don’t get a public IP addres
 
 ![Architecture](/screenshots/Architecure-Pihole+Docker.png)
 
-🧰 Tools Used
 
 - macOS (host)
 - Colima to run Docker with Lima backend on macOS
@@ -25,9 +22,8 @@ My internet provider (Jio Fiber) uses CGNAT, so I don’t get a public IP addres
 - Unbound (recursive DNS resolver)
 - Tailscale (zero-config WireGuard-based VPN)
 
-🛠️ How I Built It
 
-1. Setup Docker + Colima
+## 1. Setup Docker + Colima
 
 Install Colima and start it:
 
@@ -63,13 +59,13 @@ Unbound requires a root server list and DNSSEC trust anchor.
 
 Download them:
 
-# Root DNS server list
+#### Root DNS server list
 
 ```shell
-curl -o ./unbound/root.hints https://www.internic.net/domain/named.cache
+curl -o ./unbound-conf/root.hints https://www.internic.net/domain/named.cache
 ```
 
-# Root DNSSEC trust key
+#### Root DNSSEC trust key
 
 ```shell
 curl -o ./unbound/root.key https://data.iana.org/root-anchors/root.key
@@ -99,7 +95,7 @@ Used that auth key in Docker Compose for Tailscale container
 ]
 ```
 
-5. Start Services
+## 5. Start Services
 
 ```shell
 docker compose up -d
@@ -109,7 +105,7 @@ Tailscale container auto-joined the network, and Pi-hole was accessible locally.
 
 ![Pihole](/screenshots/Pihole-admin-dashboard.png)
 
-5.1 (Optional) Test Unbound Resolution
+### 5.1 (Optional) Test Unbound Resolution
 
 Ensure Unbound is resolving domains before Pi-hole starts using it:
 
@@ -117,7 +113,7 @@ Ensure Unbound is resolving domains before Pi-hole starts using it:
 dig @127.0.0.1 -p 5335 google.com
 ```
 
-6. Add Tailscale Global DNS
+## 6. Add Tailscale Global DNS
 
 Opened Tailscale DNS settings
 Added Pi-hole container’s Tailscale IP as a global nameserver (port 53)
@@ -125,7 +121,7 @@ Disabled MagicDNS
 
 ![Tailscale](/screenshots/Tailscale-dns.png)
 
-7. Remote Access
+## 7. Remote Access
 
 Tested DNS queries from remote Tailscale-connected devices:
 
