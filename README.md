@@ -151,9 +151,9 @@ dig @127.0.0.1 -p 5335 google.com
 
 ## 6. Add Tailscale Global DNS
 
-Opened Tailscale DNS settings
-Added Pi-hole container’s Tailscale IP as a global nameserver (port 53)
-Disabled MagicDNS
+Open your Tailscale [DNS settings](https://login.tailscale.com/admin/dns).
+Under "Nameservers" and then "Global Domains" add the Pi-hole container’s Tailscale IP as a global nameserver.
+Click on the switch named "Override DNS Servers".
 
 ![Tailscale](/screenshots/Tailscale-dns.png)
 
