@@ -49,7 +49,7 @@ export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
 
 Went to Tailscale admin panel, go to "[Access Controls](https://login.tailscale.com/admin/acls/visual/general-access-rules)" and open the Tab "[Tags](https://login.tailscale.com/admin/acls/visual/tags)" 
 Created an ACL tag (e.g. tag:pihole).\
-⚠️ If yoo use a different Tag, be sure to change it in the [The docker-compose.yml File](docker-compose.yml).
+⚠️ If you use a different Tag, be sure to change it in the [The docker-compose.yml File](docker-compose.yml).
 
 Go to the "[Settings](https://login.tailscale.com/admin/settings/general)" and under "Personal Setting" open "[Keys](https://login.tailscale.com/admin/settings/keys)"
 Generated an auth key tagged with tag:pihole
